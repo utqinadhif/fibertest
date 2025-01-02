@@ -7,6 +7,13 @@ import (
 )
 
 func Index(c *fiber.Ctx) error {
+	user := "nadhif"
+	return c.Render("index", fiber.Map{
+		"title": "Hello, " + user,
+	})
+}
+
+func Json(c *fiber.Ctx) error {
 	var user []model.User
 
 	err := config.DB.Find(&user).Error

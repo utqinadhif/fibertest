@@ -7,6 +7,7 @@ import (
 
 func Router(c *fiber.App) {
 	c.Get("/", controllers.Index)
+	c.Get("/json", controllers.Json)
 
 	c.Static("/", "./public")
 }
